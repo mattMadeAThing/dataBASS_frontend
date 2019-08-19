@@ -1,0 +1,5 @@
+<p>search works!</p>
+<input #search>
+<button (click) = "this.searchByArtist(search.value)">here</button>
+<p *ngFor= "let succ of (this.resultSet | async)">{{succ.song}}</p>
+<button (click) = "this.activeReqs()">activeReqs</button>
