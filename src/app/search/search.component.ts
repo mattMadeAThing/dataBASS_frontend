@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
   searchByArtist(searchTerm){
 
     this.resultSet = this.data.findByArtist(searchTerm);
+
     console.log(this.song + "In Serachcompts");
   }
 

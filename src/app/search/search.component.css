@@ -1,8 +1,37 @@
-div.reqbox{
-  background-color: antiquewhite;
-  max-width: 700px;
-}
 .viewport{
-  height: 200px;
-  width: 200px
+  background-color: skyblue;
+  height: 300px;
+  max-width: 500px;
+}
+.list-item{
+  background-color: whitesmoke;
+}
+#song-title{
+  max-width: 90%;
+  font-size: 18pt;
+}
+#artist-name{
+  font-size: 14pt;
+  max-width: 75%;
+}
+#container{
+  margin: 0 auto;
+  max-width: 100%;
+}
+#buttons{
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+mat-list-item{
+  display: block;
+  max-width: 470px;
+  margin: auto;
+}
+div.container{
+  max-width: 500px;
+  align-content: center;
 }

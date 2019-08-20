@@ -1,24 +1,17 @@
-<p>search works!</p>
-<input #search>
-<button (click) = "this.searchByArtist(search.value)">Search By Artist Name</button>
-<div class="reqbox">
-<mat-list dense color = primary>
-  <mat-list-item *ngFor= "let succ of (this.resultSet | async)" color = "primary">
-    <h1 matLine>{{succ.song}}</h1><em matLine>{{succ.artist}}</em><button (click) = "this.requestSong(succ.songId)">request</button></mat-list-item>
-  </mat-list>
+<div class="container">
+    <div id = "buttons">
+    <mat-form-field>search for songs by...<input matInput #search></mat-form-field>
+
+    <button mat-raised-button (click) = "this.searchByArtist(search.value)">Artist Name</button>
+    <button mat-raised-button (click) = "this.searchByArtist(search.value)">Song Title</button>
+  </div>
+<cdk-virtual-scroll-viewport itemSize="52.5" class = "viewport">
+    <mat-list dense color = primary *cdkVirtualFor="let succ of (this.resultSet | async)" class="list-group-item">
+
+        <mat-list-item class = "list-item">
+          <h1 matLine id="song-title">{{succ.song}}</h1><em id="artist-name"matLine>By: {{succ.artist}}</em><button mat-raised-button (click) = "this.requestSong(succ.songId)">request </button></mat-list-item>
+        </mat-list>
+</cdk-virtual-scroll-viewport>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="52.5" class = "viewport">
-    <div *cdkVirtualFor="let succ of (this.resultSet | async)" class="list-group-item">
-       <mat-tree [dataSource]= "succ.artist" [treeControl]="treeControl">
-
-       </mat-tree>
-    </div>
-  </cdk-virtual-scroll-viewport>
-
-<div class="reqbox">
-    <mat-tree>
-
-    </mat-tree>
-  </div>
 
