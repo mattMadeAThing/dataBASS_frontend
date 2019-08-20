@@ -21,4 +21,7 @@ export class DataService {
     return this.searchResults;
 
   }
+  rateUp(){
+    console.log("rateUp");
+  }
 }

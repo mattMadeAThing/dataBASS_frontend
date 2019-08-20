@@ -3,6 +3,8 @@ import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { Song } from '../Song';
 
+
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -23,9 +25,8 @@ export class SearchComponent implements OnInit {
     this.resultSet = this.data.findByArtist(searchTerm);
     console.log(this.song + "In Serachcompts");
   }
-  activeReqs(){
-    this.resultSet = this.data.activereqs();
-    console.log(this.song + "activereqs console in searchcomp");
-  }
 
+  requestSong(songId: number){
+
+  }
 }

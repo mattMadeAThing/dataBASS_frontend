@@ -1,0 +1,10 @@
+<p>requests works!</p>
+<div class="reqbox">
+  <mat-list dense color = primary>
+    <mat-list-item *ngFor= "let succ of (this.resultSet | async)" color = "primary">
+      <h1 matLine>{{succ.song}}</h1><em matLine>{{succ.artist}}</em><button (click) = "this.rateUp()">rateUP</button></mat-list-item>
+    </mat-list>
+</div>
+
+
+<button (click) = "this.activeReqs()">activeReqs</button>
