@@ -1,17 +1,21 @@
 <div class="container">
     <div id = "buttons">
-    <mat-form-field>search for songs by...<input matInput #search></mat-form-field>
-
-    <button mat-raised-button (click) = "this.searchByArtist(search.value)">Artist Name</button>
-    <button mat-raised-button (click) = "this.searchByArtist(search.value)">Song Title</button>
-  </div>
-<cdk-virtual-scroll-viewport itemSize="52.5" class = "viewport">
+      <mat-form-field>
+        search for songs by...<input matInput #search>
+      </mat-form-field>
+      <button mat-raised-button (click) = "this.searchByArtist(search.value)">Artist Name</button>
+      <button mat-raised-button (click) = "this.searchBySongName(search.value)">Song Title</button>
+    </div>
+  <cdk-virtual-scroll-viewport itemSize="52.5" class = "viewport">
     <mat-list dense color = primary *cdkVirtualFor="let succ of (this.resultSet | async)" class="list-group-item">
-
-        <mat-list-item class = "list-item">
-          <h1 matLine id="song-title">{{succ.song}}</h1><em id="artist-name"matLine>By: {{succ.artist}}</em><button mat-raised-button (click) = "this.requestSong(succ.songId)">request </button></mat-list-item>
-        </mat-list>
-</cdk-virtual-scroll-viewport>
+      <mat-list-item class = "list-item">
+        <h1 matLine id="song-title">{{succ.song}}</h1>
+        <em id="artist-name"matLine>By: {{succ.artist}}</em>
+        <button mat-raised-button (click) = "this.requestSong(succ.songId)">request </button>
+      </mat-list-item>
+    </mat-list>
+  </cdk-virtual-scroll-viewport>
+  <app-requests [activeRequests]="this.activeRequests"></app-requests>
 </div>
 
 

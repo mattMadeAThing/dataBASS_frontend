@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { Observable } from 'rxjs';
 import { Song } from '../Song';
 import {DataService} from '../data.service';
+
 
 @Component({
   selector: 'app-requests',
@@ -10,7 +11,7 @@ import {DataService} from '../data.service';
   styleUrls: ['./requests.component.css']
 })
 export class RequestsComponent implements OnInit {
-
+  @Input() activeRequests: Observable<Song[]>;
   resultSet: Observable<Song[]>;
 
   constructor(private data: DataService) { }
@@ -21,4 +22,5 @@ export class RequestsComponent implements OnInit {
   activeReqs(){
     this.resultSet = this.data.activereqs();
   }
+
 }

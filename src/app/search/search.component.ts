@@ -15,19 +15,21 @@ export class SearchComponent implements OnInit {
   constructor(private data: DataService) { }
 
   resultSet: Observable<Song[]>;
+  activeRequests: Observable<Song[]>;
   song: Song;
   ngOnInit() {
 
   }
 
-  searchByArtist(searchTerm){
-
+  searchByArtist(searchTerm: string){
     this.resultSet = this.data.findByArtist(searchTerm);
-
-    console.log(this.song + "In Serachcompts");
+  }
+  searchBySongName(songName: string){
+    this.resultSet = this.data.findBySongName(songName);
   }
 
   requestSong(songId: number){
-
+    this.data.submitRequest(songId);
+    this.activeRequests = this.data.activereqs();
   }
 }
