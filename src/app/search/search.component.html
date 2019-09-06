@@ -1,7 +1,7 @@
 <div class="container">
     <div id = "buttons">
       <mat-form-field>
-        search for songs by...<input matInput #search>
+        Search for songs by...<input matInput #search>
       </mat-form-field>
       <button mat-raised-button (click) = "this.searchByArtist(search.value)">Artist Name</button>
       <button mat-raised-button (click) = "this.searchBySongName(search.value)">Song Title</button>
@@ -15,7 +15,6 @@
       </mat-list-item>
     </mat-list>
   </cdk-virtual-scroll-viewport>
+  <button mat-raised-button (click) = "this.refreshLoop(); this.allowLoop = false;" [disabled]="this.allowLoop">Refresh the Queue!</button>
   <app-requests [activeRequests]="this.activeRequests"></app-requests>
 </div>
-
-

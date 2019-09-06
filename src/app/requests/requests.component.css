@@ -1,0 +1,19 @@
+.viewport{
+  background-color: skyblue;
+  height: 300px;
+  max-width: 500px;
+}
+.list-item{
+  background-color: whitesmoke;
+  display: block;
+  max-width: 470px;
+  margin: auto;
+}
+#song-title{
+  max-width: 90%;
+  font-size: 18pt;
+}
+#artist-name{
+  font-size: 14pt;
+  max-width: 75%;
+}

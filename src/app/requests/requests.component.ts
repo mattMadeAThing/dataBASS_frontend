@@ -11,6 +11,7 @@ import {DataService} from '../data.service';
   styleUrls: ['./requests.component.css']
 })
 export class RequestsComponent implements OnInit {
+  // The activeRequests are passed to the RequestsComponent through this right here
   @Input() activeRequests: Observable<Song[]>;
   resultSet: Observable<Song[]>;
 
@@ -18,8 +19,8 @@ export class RequestsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  activeReqs(){
+  // This may need to be nuked. Double check access logic in template
+  activeReqs() {
     this.resultSet = this.data.activereqs();
   }
 

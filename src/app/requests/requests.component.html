@@ -1,10 +1,10 @@
-<p>requests works!</p>
-<div class="reqbox">
-  <mat-list dense color = primary>
-    <mat-list-item *ngFor= "let song of (this.activeRequests | async)" color = "primary">
-      <h1 matLine>{{song.song}}</h1><em matLine>{{song.artist}}</em>
-      <h3>{{song.rating}}</h3>
-      <button (click) = "this.rateUp()">rateUP</button></mat-list-item>
-    </mat-list>
-</div>
-<button (click) = "this.activeRequests">activeReqs</button>
+
+<cdk-virtual-scroll-viewport itemSize="52.5" class = "viewport">
+  <mat-list dense color = primary *cdkVirtualFor="let succ of (this.activeRequests | async)" >
+    <mat-list-item class = "list-item">
+      <h1 matLine id="song-title">{{succ.song}}</h1>
+      <em id="artist-name"matLine>By: {{succ.artist}}</em>
+    </mat-list-item>
+  </mat-list>
+</cdk-virtual-scroll-viewport>
+
